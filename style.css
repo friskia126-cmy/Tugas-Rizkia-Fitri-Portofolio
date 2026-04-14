@@ -1,0 +1,247 @@
+/* --- Pengaturan Variabel Warna & Font --- */
+:root {
+    --bg-body: #fdfaf5; /* Cream sangat muda/off-white */
+    --bg-card: #ffffff; /* Putih bersih untuk konten */
+    --accent-soft: #e3e9f2; /* Biru keabuan sangat muda untuk hover/aksen */
+    --text-main: #505860; /* Abu-abu gelap (lebih lembut dari hitam) */
+    --text-light: #808890; /* Abu-abu muda untuk subtitle */
+    --font-heading: 'Playfair Display', serif; /* Font Serif untuk Judul Besar */
+    --font-body: 'Poppins', sans-serif; /* Font Sans-serif untuk isi */
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.05); /* Bayangan halus */
+}
+
+/* --- Reset Dasar --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
+/* --- Pengaturan Container Utama --- */
+.header-container, .main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Kriteria 1: Styling Header (Menggunakan Flexbox) --- */
+header {
+    background-color: rgba(253, 250, 245, 0.9); /* Transparan dikit */
+    padding: 20px 0;
+    position: sticky; /* Menempel di atas saat di-scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex; /* FLEXBOX */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-main);
+}
+
+/* Styling Navigasi */
+nav ul {
+    list-style: none;
+    display: flex; /* FLEXBOX */
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+nav ul li a:not(.btn-cta):hover {
+    background-color: var(--accent-soft);
+}
+
+/* Tombol khusus untuk kriteria 2 */
+.btn-cta {
+    background-color: var(--text-main);
+    color: #fff !important;
+}
+
+.btn-cta:hover {
+    background-color: #3d454f;
+    transform: translateY(-2px);
+}
+
+/* --- Kriteria 1: Styling Main --- */
+main {
+    padding: 40px 0;
+}
+
+/* --- Kriteria 4: Layouting Utama menggunakan FLEXBOX --- */
+.content-wrapper {
+    display: flex; /* FLEXBOX UTAMA */
+    gap: 30px;
+    align-items: flex-start; /* Aside tidak ikut tinggi dengan Article */
+}
+
+.articles-area {
+    flex: 2; /* Mengambil 2 bagian ruang */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Styling Umum untuk Kartu Konten */
+.card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+}
+
+.subtitle {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+/* Grid kecil di dalam projek (contoh penggunaan flex lain) */
+.project-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.project-item {
+    flex: 1;
+    background-color: var(--bg-body);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+/* --- Kriteria 1 & 3: Styling ASIDE (Profile) --- */
+.profile-card {
+    flex: 1; /* Mengambil 1 bagian ruang */
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden; /* Agar sudut gambar melengkung ikut kartu */
+    position: sticky; /* Membuat profile menempel saat artikel di-scroll */
+    top: 100px; 
+}
+
+.profile-header {
+    background-color: var(--accent-soft);
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-body h3 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+}
+
+.role {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+.bio-details {
+    list-style: none;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.bio-details li {
+    margin-bottom: 8px;
+}
+
+/* --- Kriteria 1: Styling FOOTER --- */
+footer {
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 40px;
+}
+
+/* --- Responsivitas untuk Layar HP (Masih pakai flexbox) --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Tumpuk ke bawah di HP */
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-grid {
+        flex-direction: column;
+    }
+    
+    .profile-card {
+        position: static; /* Nonaktifkan sticky di HP */
+        width: 100%;
+    }
+}
